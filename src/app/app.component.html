@@ -6,7 +6,7 @@
       (keypress)="numberOnly($event)">
     <mat-hint>{{userVal.value?.length || 0}}/1</mat-hint>
   </mat-form-field>
-  <button *ngIf="userVal.value" mat-button color="primary" (click)="getUserDetails(userVal.value)">
+  <button *ngIf="userVal.value" mat-raised-button color="primary" (click)="getUserDetails(userVal.value)">
     Submit
   </button>
 

@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
     company: "XYZ LLC"
   }];
   telephone;
+  userValue;
 
   dataSource = new MatTableDataSource(this.listRecords);
   error: boolean;
