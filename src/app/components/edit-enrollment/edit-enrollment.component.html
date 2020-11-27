@@ -14,7 +14,7 @@
     <div class="col">
         <button *ngIf="!edit" mat-raised-button color="primary" (click)="edit = true">Edit</button>
         <button *ngIf="edit" mat-raised-button (click)="edit = false">Stop - Edit</button>
-        <button mat-raised-button color="warn" (click)="delete()"> Delete </button>
+        <button mat-raised-button color="warn" (click)="delete()" disabled> Delete </button>
     </div>
 </div>
 <div class="row my-2">
