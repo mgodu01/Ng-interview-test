@@ -7,10 +7,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSliderModule, MatTableModule } from '@angular/material';
+import { EnrollManagementComponent } from './components/enroll-management/enroll-management.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { EditEnrollmentComponent } from './components/edit-enrollment/edit-enrollment.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EnrollManagementComponent,
+    EditEnrollmentComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,9 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSliderModule, M
     MatSliderModule,
     MatButtonModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgGridModule.withComponents([])
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
