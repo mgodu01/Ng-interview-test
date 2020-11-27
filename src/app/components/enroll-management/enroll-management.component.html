@@ -1,8 +1,27 @@
-<p>{{enrollees | json}}</p>
+<div class="row my-3">
+    <div class="col">
+       <h1>Enrollee Management</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-9">
+        <ag-grid-angular
+        style="height: 500px;"
+        class="ag-theme-alpine"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [rowClassRules]="rowClassRules">
+    </ag-grid-angular>
+    </div>
+    <div class="col">
+        <h2>Tech Stack</h2>
+        <ul>
+            <li>Angular</li>
+            <li>Bootstrap 4</li>
+            <li>ag-Grid</li>
+            <li>Angular Material</li>
+            <li>Deno Server</li>
+        </ul>
+    </div>
+</div>
 
-<ag-grid-angular
-    style="width: 50%; height: 500px;"
-    class="ag-theme-alpine"
-    [rowData]="rowData"
-    [columnDefs]="columnDefs">
-</ag-grid-angular>

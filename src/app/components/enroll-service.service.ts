@@ -11,4 +11,10 @@ export class EnrollServiceService {
   getEnrolles() {
     return this.http.get<any>('http://localhost:8080/enrollees');
   }
+  getEnrolleById(id) {
+    return this.http.get<any>('http://localhost:8080/enrollees/'+id);
+  }
+  updateEnrollee(id, data) {
+    return this.http.put<any>('http://localhost:8080/enrollees/'+id, data);
+  }
 }

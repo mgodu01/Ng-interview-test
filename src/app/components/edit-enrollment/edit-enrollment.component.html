@@ -1,1 +1,51 @@
-<p>edit-enrollment works!</p>
+<div class="row mt-3">
+    <div class="col">
+        <button type="button" class="btn btn-light" [routerLink]="['/']">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+              </svg> Back
+        </button>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col">
+        <h1>Enrollee Data</h1>
+    </div>
+    <div class="col">
+        <button *ngIf="!edit" mat-raised-button color="primary" (click)="edit = true">Edit</button>
+        <button *ngIf="edit" mat-raised-button (click)="edit = false">Stop - Edit</button>
+        <button mat-raised-button color="warn" (click)="delete()"> Delete </button>
+    </div>
+</div>
+<div class="row my-2">
+    <div class="col"><b> ID: </b> {{enrolee?.id}}</div>
+</div>
+<div class="row my-2">
+    <div *ngIf="!edit" class="col"> <b>Name: </b> {{enrolee?.name}}</div>
+    <div *ngIf="edit" class="col"> 
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="{{enrolee?.name}}" value="{{enrolee?.name}}" [(ngModel)]="name">
+          </mat-form-field>
+        </div>
+    <div class="col"><b>DOB:</b> {{enrolee?.dateOfBirth ? enrolee?.dateOfBirth : "NAN"}}</div>
+    <div class="col"></div>
+</div>
+<div class="row">
+    <div *ngIf="!edit" class="col text-center">
+        <button *ngIf="enrolee?.active" type="button" class="btn btn-success">Active</button>
+        <button *ngIf="!enrolee?.active" type="button" class="btn btn-secondary">Not Active</button>
+    </div>
+    <div *ngIf="edit" class="col text-center">
+        <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <select matNativeControl required [(ngModel)]="active">
+              <option value="true">Active</option>
+              <option value="false">Not Active</option>
+            </select>
+          </mat-form-field>
+         <button mat-flat-button color="primary" (click)="submitChanges()">Submit</button>
+    </div>
+    <div class="col"></div>
+</div>
+
